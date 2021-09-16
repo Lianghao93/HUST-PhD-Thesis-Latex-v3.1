@@ -1,0 +1,54 @@
+\ttl@change@i {\@ne }{chapter}{0.0em}{\bfseries \addvspace {6bp minus6bp}}{\thecontentslabel \hspace {1em}}{}{\normalfont \dotfill \textrm {\bfseries \contentspage }}\relax 
+\ttl@change@v {chapter}{}{}{}\relax 
+\contentsline {chapter}{摘\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}要}{I}{section*.1}%
+\contentsline {chapter}{Abstract}{II}{section*.3}%
+\ttl@change@i {\@ne }{chapter}{1.5em}{\bf \song \addvspace {6bp minus6bp}}{\contentslabel {1.5em}}{}{}\relax 
+\ttl@change@v {chapter}{}{}{}\relax 
+\contentsline {chapter}{\numberline {1}模板简介}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}概述}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}参考资料}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}模板编译简介}{1}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}XeLatex}{1}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}模板包含文件简介}{1}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}文件清单}{1}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}目录结构}{2}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}宏包清单}{2}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}类文件选项}{2}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}mathtimes, mathCMR}{2}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}draftformat, finalformat}{3}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6}更新记录}{3}{section.1.6}%
+\contentsline {chapter}{\numberline {2}基本命令}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}封面相关}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}基本字体命令}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}表格样本}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}公式}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}列表环境}{5}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Itemize 环境}{5}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Description 环境}{6}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Enumerate 环境}{6}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}定理环境}{7}{section.2.6}%
+\contentsline {section}{\numberline {2.7}参考文献}{8}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}图书（book/inbook）}{8}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}期刊（article）}{8}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}会议论文集（Inproceedings/Conference）}{8}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}学位论文（MastersThesis/PhdThesis）}{8}{subsection.2.7.4}%
+\contentsline {section}{\numberline {2.8}图形环境}{9}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}单个图形}{9}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}并排子图}{9}{subsection.2.8.2}%
+\contentsline {chapter}{\numberline {3}结论}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}全文总结}{11}{section.3.1}%
+\ttl@change@i {\@ne }{chapter}{0.0em}{\bfseries \song \addvspace {6bp minus6bp}}{\thecontentslabel \hspace {1em}}{}{\normalfont \dotfill \textrm {\contentspage [(\thecontentspage )]}}\relax 
+\ttl@change@v {chapter}{}{}{}\relax 
+\contentsline {chapter}{致\hspace {2em}谢}{12}{section*.11}%
+\ttl@change@i {\@ne }{chapter}{0.0em}{\bfseries \song \addvspace {6bp minus6bp}}{\thecontentslabel \hspace {1em}}{}{\normalfont \dotfill \textrm {\contentspage [(\thecontentspage )]}}\relax 
+\ttl@change@v {chapter}{}{}{}\relax 
+\contentsline {chapter}{参考文献}{13}{section*.13}%
+\ttl@change@i {\@ne }{chapter}{0.0em}{\bf \addvspace {6bp minus6bp}}{\appendixname ~\thecontentslabel \hspace {1em}}{}{\normalfont \dotfill \textrm {\contentspage [(\thecontentspage )]}}\relax 
+\ttl@change@v {chapter}{}{}{}\relax 
+\contentsline {chapter}{\numberline {1}答辩委员会决议}{14}{appendix.A}%
+\contentsline {chapter}{\numberline {2}攻读学位期间发表论文目录}{15}{appendix.B}%
+\contentsline {chapter}{\numberline {3}公开发表的学术论文与博士学位论文的关系}{16}{appendix.C}%
+\contentsline {chapter}{\numberline {4}攻读博士学位期间参与的科研项目}{17}{appendix.D}%
+\contentsline {chapter}{\numberline {5}中英文缩写对照表}{18}{appendix.E}%
+\contentsline {chapter}{\numberline {6}其它数据图表或程序}{19}{appendix.F}%
+\contentsfinish 
