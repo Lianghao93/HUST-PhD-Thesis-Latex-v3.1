@@ -34,8 +34,9 @@ draftformat, finalformat
     草稿正文页包括页眉（“华中科技大学博士学位论文”），页眉修饰线（双线）。
     页脚（页码），页脚修饰线（单线）。
     盲审版正文页不包括页眉、页眉修饰线和页脚修饰线，仅包含页脚。
-
+    
 mathtimes, mathCMR
+
     公式字体选项，mathtimes 选项让公式启用 Times Roman 字体，
     mathCMR 选项让公式启用 CM Roman 字体。
     目前学校尚未规定公式选用什么字体，推荐使用 CM Roman 字体，
