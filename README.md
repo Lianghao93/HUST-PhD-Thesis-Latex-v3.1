@@ -56,7 +56,7 @@ modify class file (HUSTthesis.cls):
 
     4. update the appendixs according to the latest standard
 
- by Li Lianghao (lianghao1993@hust.edu.cn)
+ by Li Lianghao (lianghao1993@hust.edu.cn; lianghao93@vip.qq.com)
 
 *******
 11/2020 V3.0 changes:
