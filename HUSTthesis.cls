@@ -1,5 +1,5 @@
 %%
-%% HUSTThesis.cls 2021/09/15 version V3.1
+%% HUSTThesis.cls 2022/03/26 version V3.2
 %%
 %% This is the unofficial LaTeX class for Master Thesis Template of
 %% Huazhong University of Science and Technology
@@ -7,20 +7,19 @@
 %%
 %% Contributors:
 %% Feng Jiang (2005 V1.0), Huikan Liu (2006 V2.0), Xinze Zhang (2020 V3.0),
-%% Lianghao Li (2021 V3.1)
+%% Lianghao Li & Jianqing Lin (2021 V3.2)
 %%
 %% Copyright (C) 2006-2007 by Huikan Liu <hkliu@mail.edu.cn>
 %% Copyright (C) 2020-2021 by Xinze Zhang <xinze@hust.edu.cn>
-%% Copyright (C) 2021-2022 by Lianghao Li <lianghao1993@hust.edu.cn>
+%% Copyright (C) 2021-2022 by Lianghao Li <lianghao93@vip.qq.com>
+%                           & JianQing Lin <linjqcn@gmail.com>
 %% This code is distributed under the Perl Artistic License
 %% ( http://language.perl.com/misc/Artistic.html )
 %% and may be freely used, distributed and modified.
 %% Retain the contribution notices and credits.
 %%
-%% Current maintainer: Huikan Liu
-%%                     hkliu@mail.edu.cn
-%%                     xinze@hust.edu.cn
-%%                     lianghao1993@hust.edu.cn
+%% Current maintainer: lianghao93@vip.qq.com
+%%                     linjqcn@gmail.com
 %%
 %%**********************************************************************
 %
@@ -49,6 +48,20 @@
 %    打开选项启用 arial 字体，若无字体宏包，则默认采用 helvet 字体。
 %
 %*******
+% 03/2022 V3.1 changes:
+%    modify class file (HUSTthesis.cls):
+%    1. Update the defence committee page between Chinese and English cover
+%    2. Update the indentation and spacing of the itemize, enumerate and description
+%    3. Update the reference list according to the latest standard
+%    4. Update the appendixs according to the latest standard
+%    5. Change the line spacing to match the Word template
+%    6. Added bold fonts to some fonts (Heiti & Kaiti)
+%    7. Changed the font, font size, line spacing and indentation of the table of contents page to match the Word template
+%    8. Updated header and footer
+%
+% by Li Lianghao (lianghao93@vip.qq.com)
+%  & Lin Jianqing (linjqcn@gmail.com)
+%
 % 11/2020 V1.0 changes:
 % 1. modify class file (HUSTthesis.cls):
 %   1.1 update the location of xuehao of covering page
@@ -84,7 +97,7 @@
 %% \paragraph{致谢声明}
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{HUSTthesis}
-[2006/04/06 2.0 Huazhong University of Science and Technology Thesis Template]
+[2022/03/26 3.2 Huazhong University of Science and Technology Thesis Template]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -173,17 +186,16 @@
 % \setCJKfamilyfont{hei}{SimHei}
 % \setCJKfamilyfont{kai}{KaiTi}
 % \setCJKfamilyfont{fs}{FangSong}
-% \setCJKfamilyfont{li}{LiSu}
-% \setCJKfamilyfont{you}{YouYuan}
 
+%改动1
 \setCJKmainfont[Path=font/,AutoFakeBold = {2.25},ItalicFont={simkai.ttf}]{SimSun.ttf}
-\setCJKsansfont[Path=font/]{SimHei.ttf}
-\setCJKmonofont[Path=font/]{simfang.ttf}
+\setCJKsansfont[Path=font/,AutoFakeBold = {2.25},ItalicFont={simkai.ttf}]{SimHei.ttf}
+\setCJKmonofont[Path=font/,AutoFakeBold = {2.25},ItalicFont={simkai.ttf}]{simfang.ttf}
 
 \setCJKfamilyfont{song}[Path=font/,AutoFakeBold = {2.25}]{SimSun.ttf}
-\setCJKfamilyfont{hei}[Path=font/]{SimHei.ttf}
-\setCJKfamilyfont{kai}[Path=font/]{simkai.ttf}
-\setCJKfamilyfont{fs}[Path=font/]{simfang.ttf}
+\setCJKfamilyfont{hei}[Path=font/,AutoFakeBold = {2.25}]{SimHei.ttf}
+\setCJKfamilyfont{kai}[Path=font/,AutoFakeBold = {2.25}]{simkai.ttf}
+\setCJKfamilyfont{fs}[Path=font/,AutoFakeBold = {2.25}]{simfang.ttf}
 
 
 % 加强定理环境的宏包
@@ -197,7 +209,6 @@
 
 % 控制目录风格的宏包
 \RequirePackage{titletoc}
-
 % 支持引用缩写的宏包
 \RequirePackage[numbers,super,sort&compress]{natbib}
 
@@ -228,7 +239,6 @@
   anchorcolor=black,
   filecolor=black,
   menucolor=black,
-  pagecolor=black,
   urlcolor=black,
   plainpages=false,
   pdfstartview=FitH}
@@ -576,8 +586,9 @@
 \thu@define@fontsize{qihao}{5.5pt}
 \thu@define@fontsize{bahao}{5pt}
 %% 正文小四号（12pt）字，行距为固定值18 pt，18/12=1.5倍行距
-\renewcommand\normalsize{\fontsize{12pt}{18pt}\selectfont}
-
+%\renewcommand\normalsize{\fontsize{12pt}{18pt}\selectfont}
+\renewcommand\normalsize{\fontsize{12pt}{22pt}\selectfont}
+%改动2
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 用于中文段落缩进和正文版式
@@ -680,37 +691,39 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 应用 titletoc 宏包定义标题的目录项格式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%改动3
 % 目录涉及 2 层，即: x.x
 % chapter(0), section(1), subsection(2), subsubsection(3)
 \setcounter{tocdepth}{1}
 
 %适当增加目录项的右边距
 \contentsmargin{2.0em}
-
 % 分别正文一级标题的两种目录项格式
 \newcommand{\enabledottedtoc}{%仅显示标题，不显示指引线和页码
   \titlecontents{chapter}
               [0.0em]
-              {\bfseries\song\addvspace{6bp minus6bp}}
+              {\vspace{1mm}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
               {\thecontentslabel\hspace{1em}}
               {}
-              {\normalfont\dotfill\textrm{\contentspage[(\thecontentspage)]}}}
+              {\normalfont\dotfill\textrm{\contentspage[(\thecontentspage)]}}
+              }
 \newcommand{\disabledottedtoc}{%显示标题、指引线和页码
   \titlecontents{chapter}
-              [1.5em]
-              {\bf\song\addvspace{6bp minus6bp}}
-              {\contentslabel{1.5em}}
+              [2.1em]
+              {\vspace{1mm}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
+              {\contentslabel{1.76em}}
               {}
-              {}}
+              {}
+              }
 
 % 定义其它各级子标题的目录项格式
 \titlecontents{section}
-              [2.0em]
+              [3.24em]
+              {\vspace{1mm}\sihao\addvspace{6bp minus6bp}}
+              {\contentslabel{2.76em}}
               {}
-              {\contentslabel{2.0em}}
-              {}
-              {\dotfill\textrm{\contentspage[(\thecontentspage)]}}
+              {\dotfill\textrm{\contentspage[(\thecontentspage)]}
+              }
 
 \titlecontents{subsection}
               [3.0em]
@@ -730,7 +743,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 定义页眉页脚，参考 fancyhdr 宏包的代码
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%改动4
 \newcommand{\headrulewidth}{0.4pt}
 \newcommand{\footrulewidth}{0.4pt}
 \def\ps@plain{%
@@ -740,24 +753,24 @@
     \def\@oddhead{%
       \vbox{%
         \parbox[b]{\textwidth}{\centering\sihao%
-          \ziju{0.8em} \kai \sanhao[1] \HUST@schoolename\HUST@apply}
+          \ziju{0.8em} \bfseries \kai \sanhao[1] \HUST@schoolename\HUST@apply}
         \vskip8pt
-        \vbox{\hrule width\textwidth height\headrulewidth depth0pt\vskip1.0pt\hrule width\textwidth}}}\fi%
+        \hspace{-4mm} \vbox{\hspace{-3mm} \hrule width 1.04\textwidth height\headrulewidth depth0pt\vskip1.0pt\hrule width 1.04\textwidth}}}\fi%
     \let\@evenhead=\@oddhead
   \ifHUST@finalformat
    \def\@oddfoot{%
      \hbox to\textwidth{%
-     \vbox{%
+      \vbox{%
       \hfill \parbox[t]{\textwidth}{\centering\wuhao\thepage\strut}\hfill
       }}}
    \else
    \def\footrule{{\vskip-0.3\normalbaselineskip\vskip-\footrulewidth
-   \hrule\@width\textwidth\@height\footrulewidth\vskip0.3\normalbaselineskip}}
+   \hrule\@width 1.04\textwidth\@height\footrulewidth\vskip0.3\normalbaselineskip}}
    \def\@oddfoot{%
-     \hbox to\textwidth{%
-     \vbox{%
+     \hbox to \textwidth{%
+     \hspace{-4mm}\vbox{%
       \footrule
-      \hfill \parbox[t]{\textwidth}{\centering\wuhao\thepage\strut}\hfill
+      \hfill \hspace{-4mm} \parbox[t]{\textwidth}{\centering\wuhao\thepage\strut}\hfill
       }}}
    \fi
   \let\@evenfoot=\@oddfoot}
@@ -807,6 +820,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\xuehao#1{\def\HUST@xuehao{#1}}\def\HUST@xuehao{}
+\def\miji#1{\def\HUST@miji{#1}}\def\HUST@miji{}
 \def\schoolcode#1{\def\HUST@schoolcode{#1}}\def\HUST@schoolcode{}
 \def\ctitle#1{\def\HUST@ctitle{#1}}\def\HUST@ctitle{}
 \def\cdegree#1{\def\HUST@cdegree{#1}}\def\HUST@cdegree{}
@@ -845,7 +859,7 @@
     \setlength{\extrarowheight}{3pt}
     \begin{HUST@tabular}{p{4em}p{5em}p{\textwidth-20em}p{2em}p{12em}}
     \HUST@classno & \makebox[0pt][l]{\rule[-2.0pt]{5em}{1pt}} & \hfill &  \HUST@studentno & \makebox[0pt][l]{\rule[-2.0pt]{9em}{1pt}}{\hspace{2em}\HUST@xuehao} \tabularnewline
-    \HUST@UDC & \makebox[0pt][l]{\rule[-2.0pt]{5em}{1pt}}{\hfill\HUST@schoolcode\hfill\hfill} & \hfill & \HUST@secrettitle & \makebox[0pt][l]{\rule[-2.0pt]{9em}{1pt}} \tabularnewline
+    \HUST@UDC & \makebox[0pt][l]{\rule[-2.0pt]{5em}{1pt}}{\hfill\HUST@schoolcode\hfill\hfill} & \hfill & \HUST@secrettitle & \makebox[0pt][l]{\rule[-2.0pt]{9em}{1pt}}{\hspace{2em}\HUST@miji} \tabularnewline
     \end{HUST@tabular}
     \end{center}
     }
@@ -999,7 +1013,7 @@
 
 % 定义中英文摘要
 \newcommand{\HUST@makeabstract}{%
-
+%改动5
     % 定义中文摘要
     \clearpage
     \setcounter{page}{1}
@@ -1007,12 +1021,12 @@
     \titlecontents{chapter}%重定义摘要的目录项格式
                            %有指引线，有页码，页码无括号
            [0.0em]
-           {\bfseries\addvspace{6bp minus6bp}}
+           {\bfseries\hei\addvspace{6bp minus6bp}}
            {\thecontentslabel\hspace{1em}}
            {}
            {\normalfont\dotfill\textrm{\bfseries\contentspage}}
-    \addcontentsline{toc}{chapter}{摘~~~~要}
-    \chapter*{\abstractname}
+    \addcontentsline{toc}{chapter}{\sihao 摘~~~~要} 
+    \chapter*{\bfseries\hei\abstractname}
     \markboth{\abstractshortname}{\abstractshortname}
     \HUST@cabstract
     \\[1em]
@@ -1023,7 +1037,7 @@
     % 定义英文摘要
     \clearpage
     \phantomsection
-    \addcontentsline{toc}{chapter}{Abstract}
+    \addcontentsline{toc}{chapter}{\sihao Abstract}
     \normalsize
     \chapter*{{\bfseries Abstract}}
     \markboth{Abstract}{Abstract}
@@ -1035,11 +1049,12 @@
     \disabledottedtoc%
     }
 
-% 定义“符合对照表”环境，可选
+% 定义“符号对照表”环境，可选
+%改动6
 \newenvironment{denotation}{
     %\cleardoublepage
     %\phantomsection
-    %\addcontentsline{toc}{chapter}{Abstract}
+    %\addcontentsline{toc}{chapter}{\sihao \HUST@denotation@name}
     \chapter*{\HUST@denotation@name}
     \markboth{\HUST@denotation@name}{\HUST@denotation@name}
     \xiaosi[1.6]
@@ -1058,16 +1073,18 @@
     {\end{list}}%%%%%
 
 % 定义封底的“致谢”
+%改动7
 \newenvironment{ack}{
     \clearpage
     \phantomsection
     \enabledottedtoc
-    \addcontentsline{toc}{chapter}{\HUST@ackname}
+    \addcontentsline{toc}{chapter}{\sihao \HUST@ackname}
     \normalsize
     \chapter*{\HUST@ackname}}
    {}
 
 % 定义附录及其目录项格式
+%改动8
 \let\HUST@appendix\appendix
 \renewenvironment{appendix}{%
   \HUST@appendix
@@ -1088,7 +1105,7 @@
   \renewcommand\theequation{\ifnum \c@chapter>\z@ \thechapter-\fi \@arabic\c@equation}
   \titlecontents{chapter}
               [0.0em]
-              {\bf\addvspace{6bp minus6bp}}
+              {\vspace{1mm}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
               {\appendixname~\thecontentslabel\hspace{1em}}
               {}
               {\normalfont\dotfill\textrm{\contentspage[(\thecontentspage)]}}
@@ -1133,7 +1150,7 @@
      \clearpage
      \phantomsection % make sure the hyperlink is correct
      \enabledottedtoc%
-     \addcontentsline{toc}{chapter}{\bibname}%
+     \addcontentsline{toc}{chapter}{\sihao \bibname}%
      \chapter*{\bibname}%
       \markboth{\bibname}{\bibname}%
       \xiaosi[1.5]
