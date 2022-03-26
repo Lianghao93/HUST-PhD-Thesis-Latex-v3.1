@@ -1,0 +1,132 @@
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+\chapter{模板简介}
+\label{cha:intro}
+
+\section{概述}
+\label{sec:general intro}
+论文页边距、行距全文统一。正文小四，中文宋体、英文Times New Roman， 1.5倍行距，图表五号。
+非章节结束，正文页不留白，确有需要留白不超过3行。
+
+本模板为华工博士论文~\LaTeX~模板~3.2
+版本，新版本基于清华大学学位论文~\LaTeX+CJK
+模板（薛瑞尼版本）和华中科技大学博士学位论文~\LaTeX+CJK 模板1.0
+版本。模板作者试图尽量使此模板满足华工研院提出的格式要求~\cite{guide,standard}，
+但不承诺~100\%
+满足，即：存在模板使用者需要在此模板基础上再作修正的可能。
+本模板亦可充当一份速查手册，文中包含了尽可能多的各种论文常见元素。
+但值得注意的是，在正式的论文写作中，应保持格式上的简洁和风格上的
+一致，避免出现种类繁多的元素。
+
+\section{参考资料}
+\label{sec:requirement}
+本文主要为关于~\LaTeX~模板本身使用方法的介绍，关于毕业论文写作内容上的要求，使用者请参阅《华中科技大学研究生学位论文写作指南》~\cite{guide}、《华中科技大学博士、硕士学位论文撰写规定》~\cite{standard}、《理工科-博士-华中科技大学学位论文参考模板》~\cite{modal}等文档。
+
+模板需要使用者具备基本的~\LaTeX~知识，并有一定的使用能力。
+对于一些常见构成元素的使用问题，如表格、图形等，
+使用者可查阅~\inlinecite{TEXGURU99, OETIKER02} 等文档。
+\section{模板编译简介}
+\label{sec:compile}
+
+\subsection{XeLatex}
+\label{sec:xelatex}
+
+这种编译模式下执行的命令依次为：
+\begin{verbatim}
+xelatex main 
+bibtex main % 编译参考文献文件 *.bib
+xelatex main
+\end{verbatim}
+注意当文档中的引用信息（ref 和 cite）发生变化后，就至少需要运行~
+3 次~latex 命令，从而正确显示交叉引用信息。
+
+\section{模板包含文件简介}
+\label{sec:checklist}
+
+\subsection{文件清单}
+
+表~\ref{tab:template-files} 列举了本模板主要文件及其功
+能。
+\begin{table}[htb]
+  \centering
+  \caption{模板文件清单}
+  \label{tab:template-files}
+  \begin{minipage}[t]{0.8\linewidth} % 如果想在表格中使用脚注，minipage是个不错的办法
+    \begin{tabular*}{\linewidth}{m{3cm}m{10cm}}
+      \toprule[1.5pt]
+      {\hei 文件名}  & {\hei 描述} \\\midrule[1pt]
+      HUSTthesis.cls & 模板类文件\\
+      HUSTbib.bst    & 参考文献~Bib\TeX{} 样式文件\\
+      HUSTtils.sty   & 常用的包和命令写在这里，减轻主文件的负担\\
+      \bottomrule[1.5pt]
+    \end{tabular*}
+  \end{minipage}
+\end{table}
+
+\subsection{目录结构}
+
+\begin{tabular}{l l}
+\texttt{figures} & 图像文件\\
+\texttt{ref} & 参考文献\\
+\texttt{fonts} & 字体文件\\
+\texttt{body} & 剩下的文件，包括：封面、各章节、结论、致谢、附录、发表论文列表\\
+\end{tabular}
+
+\subsection{宏包清单}
+
+本模板可能用到的所有宏包列举如下：
+\begin{enumerate}
+\item 字体宏包： arial, helvet, mathptmx, courier, bm
+\item 数学环境宏包：amsmath, amssymb
+\item 图形宏包：graphicx, subfig
+\item 表格宏包：array, booktabs
+\item 文本排版宏包：indentfirst, ntheorem, titletoc
+\item 引用及辅助宏包：hypernat, natbib, hyperref
+\item 其它辅助宏包：ifthen, calc, ifpdf
+\end{enumerate}
+上面各宏包都包含在最新的TeX Live套装中，如果缺其中的某些宏包，
+请下载最新的TeX Live套装。
+
+\section{类文件选项}
+\label{sec:options}
+
+本模板相对与原先的~1.0 版本最大的区别是提供了一个类文件~
+HUSTthesis.cls，所以使用的时候需要加载相应的类选项。典型的加载方式
+如下：
+
+\verb|\documentclass[draftformat,mathCMR]{HUSTthesis}|
+
+\noindent 下面逐一介绍所有选项以及相应的可选值。
+
+\subsection{mathtimes, mathCMR}
+
+公式字体选项，mathtimes 选项让公式启用~Times Roman 字体，mathCMR
+选项让公式启用~CM Roman
+字体。目前学校尚未规定公式选用什么字体，推荐使用~CM Roman 字体，
+因为~Times Roman 数学字体不支持黑体。 如果使用~Times Roman
+字体，需加载~bm 宏包用于支持黑体（不推荐）。
+
+\subsection{draftformat, finalformat}
+
+提交草稿打开~draftformat 选项，提交最终版打开~finalformat 选项。
+草稿正文页包括页眉（“华中科技大学硕士学位论文”），页眉修饰线（双线），
+页脚（页码），页脚修饰线（单线）。
+最终版正文页不包括页眉、页眉修饰线和页脚修饰线，仅包含页脚。
+
+\section{更新记录}
+
+\begin{center}
+\begin{longtable}{cccp{9cm}}
+\hlinewd{1.5pt}
+日期 & 版本 & 更新人 & 说明\\
+\midrule[0.5pt]
+2005/06/22 & 1.00 & Feng Jiang & 首次发布于白云黄鹤~BBS \TeX~版。\\
+2006/06/14 & 2.00 & 刘慧侃 & 发布于白云黄鹤~BBS Paper 版。\\
+2020/11/16 & 3.00 & Xinze Zhang & 发布于GitHub。\\
+2022/03/26 & 3.2  & Lianghao Li \& Jianqing Lin &发布于GitHub。\\
+... & ... & ... & ...\\
+\hlinewd{1.5pt}
+\end{longtable}
+\end{center}
