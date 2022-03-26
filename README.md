@@ -17,7 +17,7 @@ This code is distributed under the Perl Artistic License
 and may be freely used, distributed and modified.
 Retain the contribution notices and credits.
 
-Current maintainer:    lianghao93@vip.qq.com
+Current maintainer:    lianghao93@vip.qq.com;
                        linjqcn@gmail.com
 
 
