@@ -1,5 +1,5 @@
 %%
-%% HUSTThesis.cls 2022/03/26 version V3.2
+%% HUSTThesis.cls 2022/03/26 version V3.1
 %%
 %% This is the unofficial LaTeX class for Master Thesis Template of
 %% Huazhong University of Science and Technology
@@ -7,7 +7,7 @@
 %%
 %% Contributors:
 %% Feng Jiang (2005 V1.0), Huikan Liu (2006 V2.0), Xinze Zhang (2020 V3.0),
-%% Lianghao Li & Jianqing Lin (2021 V3.2)
+%% Lianghao Li & Jianqing Lin (2021 V3.1)
 %%
 %% Copyright (C) 2006-2007 by Huikan Liu <hkliu@mail.edu.cn>
 %% Copyright (C) 2020-2021 by Xinze Zhang <xinze@hust.edu.cn>
@@ -191,7 +191,9 @@
 \setCJKmainfont[Path=font/,AutoFakeBold = {2.25},ItalicFont={simkai.ttf}]{SimSun.ttf}
 \setCJKsansfont[Path=font/,AutoFakeBold = {2.25},ItalicFont={simkai.ttf}]{SimHei.ttf}
 \setCJKmonofont[Path=font/,AutoFakeBold = {2.25},ItalicFont={simkai.ttf}]{simfang.ttf}
+\setCJKmonofont[Path=font/,AutoFakeBold = {2.25},ItalicFont={simkai.ttf}]{STZhongsong.ttf}
 
+\setCJKfamilyfont{zhongsong}[Path=font/,AutoFakeBold = {2.25}]{STZhongsong.ttf}
 \setCJKfamilyfont{song}[Path=font/,AutoFakeBold = {2.25}]{SimSun.ttf}
 \setCJKfamilyfont{hei}[Path=font/,AutoFakeBold = {2.25}]{SimHei.ttf}
 \setCJKfamilyfont{kai}[Path=font/,AutoFakeBold = {2.25}]{simkai.ttf}
@@ -547,8 +549,8 @@
 \let\kaishu\kai
 \newcommand{\hei}{\CJKfamily{hei}}      % 黑体
 \let\heiti\hei
-% \newcommand{\li}{\CJKfamily{li}}        % 隶书
-% \let\lishu\li
+\newcommand{\zhongsong}{\CJKfamily{zhongsong}}        % 华文中宋
+\let\STzhongsong\zhongsong
 % \newcommand{\you}{\CJKfamily{you}}      % 幼圆
 % \let\youyuan\you
 
@@ -702,7 +704,7 @@
 \newcommand{\enabledottedtoc}{%仅显示标题，不显示指引线和页码
   \titlecontents{chapter}
               [0.0em]
-              {\vspace{1mm}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.45em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
               {\thecontentslabel\hspace{1em}}
               {}
               {\normalfont\dotfill\textrm{\contentspage[(\thecontentspage)]}}
@@ -710,7 +712,7 @@
 \newcommand{\disabledottedtoc}{%显示标题、指引线和页码
   \titlecontents{chapter}
               [2.1em]
-              {\vspace{1mm}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.45em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
               {\contentslabel{1.76em}}
               {}
               {}
@@ -719,7 +721,7 @@
 % 定义其它各级子标题的目录项格式
 \titlecontents{section}
               [3.24em]
-              {\vspace{1mm}\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.45em}\sihao\addvspace{6bp minus6bp}}
               {\contentslabel{2.76em}}
               {}
               {\dotfill\textrm{\contentspage[(\thecontentspage)]}
@@ -867,8 +869,11 @@
     %\renewcommand{\baselinestretch}{1.5}
     \vspace{2.0cm}
     \begin{center}
-    \includegraphics[scale=1.2]{hust-flash-eps-crop.eps}\\[1.3cm]
-    \ziju{5bp}\dachu[1]{\bf \song \HUST@apply}%\CJKfamily{fzcs}
+    \includegraphics[scale=1.14]{figures/hust-flash-eps-crop.png}\\[1.3cm]
+    \vspace{-0.8cm}
+    \ziju{5bp}\dachu[1]{\bfseries \zhongsong \HUST@apply} \\%\CJKfamily{fzcs}
+    \vspace{-0.8cm}
+    \ziju{1bp}\bf{\xiaosan[1]{( 学术型$\square$ $\quad \quad$ 专业型$\square$ )}}
     \end{center}}
     \parbox[t][4cm][t]{\paperwidth-7cm}{
     \vspace{3.0cm}
@@ -930,11 +935,12 @@
     \parbox[t][5.2cm][t]{\textwidth}{
       \renewcommand{\baselinestretch}{1.5}
       \begin{center}
-        \sihao[1.1] \textbf{A Dissertation Submitted in Partial Fulfillment of the Requirements
+        \xiaosan[1.1] \textbf{A Dissertation Submitted in Partial Fulfillment of the Requirements
          for the Degree of \HUST@edegree}
       \end{center}}
 
     \parbox[t][5.5cm][t]{\textwidth}{
+    \vspace{2cm}
       \renewcommand{\baselinestretch}{1.3}
       \begin{center}
         \erhao \textbf{\HUST@etitle}
@@ -942,6 +948,7 @@
 
     \vspace*{2cm}
     \parbox[t][2.1cm][t]{\textwidth-4cm}{
+    \vspace{1cm}
       \xiaosan[1.2]\bfseries\centering%
       \begin{HUST@tabular}{lrp{20em}}
         Ph.D. Candidate & : & \HUST@eauthor\\ \\
@@ -961,35 +968,36 @@
 
 % 版权页
 \newcommand{\HUST@authorization@mk}{%
-    \vspace*{-2.5cm}
+    %\vspace*{1cm}
 
     \begin{center}
-    \parbox[t]{\textwidth}{{\sanhao \hei \centerline{\HUST@declare}}}
+    \parbox[t]{\textwidth}{\sanhao \hei \centerline{\HUST@declare}}
 
     \vspace{1cm}
     \parbox[t]{\textwidth}{\xiaosi[2]\HUST@declaretext}
 
-    \vspace{1.9cm}
+    \vspace{1cm}
     \parbox[t]{\textwidth}{\xiaosi[1.5]
     \hfill \begin{HUST@tabular}{ll}
-        \HUST@authorsig & \hspace{2em}\\
-        \HUST@frontdate & \hspace{2em}\\
-    \end{HUST@tabular}}
+        \HUST@authorsig & \hspace{-2em} \vspace{0.5cm}\\
+        \HUST@frontdate & \hspace{-2em} \\
+    \end{HUST@tabular}}\\
+    \vspace{3cm}    
     \begin{center}
-    \parbox[t][3cm][c]{\textwidth}{{\sanhao \hei \centerline{\HUST@authtitle}}}
+    \parbox[t][3cm][c]{\textwidth}{\sanhao \hei \centerline{ \HUST@authtitle}}
     \parbox[t][3cm][c]{\textwidth}{\xiaosi[2]\HUST@authorization}\\
-    \vspace{30bp}
-    \hspace*{2em}\parbox[t][2cm][c]{\textwidth}{\xiaosi[2]\HUST@authorizationaddon}
-    \hspace*{2em}\parbox[t][2cm][c]{\textwidth}{\xiaosi[2]\HUST@authorizationcheck}
+    \hspace*{2em}\parbox[t][2cm][c]{\textwidth}{\xiaosi[2]\HUST@authorizationaddon}\\ \vspace{-1em}
+    \hspace*{2em}\parbox[t][2cm][c]{\textwidth}{\xiaosi[2]\HUST@authorizationcheck}\\
+    \vspace{-2cm}
     \hspace*{2em}\parbox[t][3cm][b]{\textwidth-2em}{\xiaosi[1.5]
     \begin{HUST@tabular}{ll}
-        \HUST@authorsig & \hspace{2em}\\
-        \HUST@frontdate & \hspace{2em}\\
+        \hspace{-1.5em} \HUST@authorsig & \hspace{-2em}         \vspace{0.5cm}\\
+        \hspace{-1.5em} \HUST@frontdate & \hspace{-2em} \\
     \end{HUST@tabular}
     \hfill
     \begin{HUST@tabular}{ll}
-        \HUST@teachersig & \hspace{2em}\\
-        \HUST@frontdate & \hspace{2em}\\
+        \HUST@teachersig & \hspace{-2.4em}         \vspace{0.5cm}\\
+        \HUST@frontdate & \hspace{-2.4em} \\
     \end{HUST@tabular}}
     \end{center}
     \end{center}}
@@ -1025,7 +1033,7 @@
            {\thecontentslabel\hspace{1em}}
            {}
            {\normalfont\dotfill\textrm{\bfseries\contentspage}}
-    \addcontentsline{toc}{chapter}{\sihao 摘~~~~要} 
+    \addcontentsline{toc}{chapter}{\sihao 摘~~~~要}
     \chapter*{\bfseries\hei\abstractname}
     \markboth{\abstractshortname}{\abstractshortname}
     \HUST@cabstract
@@ -1105,7 +1113,7 @@
   \renewcommand\theequation{\ifnum \c@chapter>\z@ \thechapter-\fi \@arabic\c@equation}
   \titlecontents{chapter}
               [0.0em]
-              {\vspace{1mm}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.45em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
               {\appendixname~\thecontentslabel\hspace{1em}}
               {}
               {\normalfont\dotfill\textrm{\contentspage[(\thecontentspage)]}}
@@ -1233,7 +1241,7 @@
 
 
 
-\renewcommand\contentsname{目\hspace{2em}录}
+\renewcommand\contentsname{\bfseries \hei 目\hspace{2em}录}
 \renewcommand\listfigurename{插图}
 \renewcommand\listtablename{表格}
 
@@ -1302,7 +1310,7 @@
     缩印或扫描等复制手段保存和汇编本学位论文。}
 
 \newcommand{\HUST@authorizationaddon}{%
- 本论文属于 \tabincell{l}{保密$\square$，在~\makebox[2em]{\hrulefill} 年解密后适用本授权书。\\
+ 本论文属于 \tabincell{l}{保\hspace{1em}密$\square$，在~\makebox[2em]{\hrulefill} 年解密后适用本授权书。\\
                             不保密~$\square$。} }
 \newcommand{\HUST@authorizationcheck}{%
 （请在以上方框内打“$\surd$”）}
