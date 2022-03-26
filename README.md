@@ -17,8 +17,8 @@ This code is distributed under the Perl Artistic License
 and may be freely used, distributed and modified.
 Retain the contribution notices and credits.
 
-Current maintainer: 
-lianghao1993@hust.edu.cn
+Current maintainer:    lianghao93@vip.qq.com
+                       linjqcn@gmail.com
 
 
 **********************************************************************
@@ -55,8 +55,17 @@ modify class file (HUSTthesis.cls):
     3. update the reference list according to the latest standard
 
     4. update the appendixs according to the latest standard
+    
+    5. Change the line spacing to match the Word template
+    
+    6. Added bold fonts to some fonts (Heiti & Kaiti)
 
+    7. Changed the font, font size, line spacing and indentation of the table of contents page to match the Word template
+
+    8. Updated header and footer
+    
  by Li Lianghao (lianghao1993@hust.edu.cn; lianghao93@vip.qq.com)
+    Lin Jianqing (linjqcn@gmail.com)
 
 *******
 11/2020 V3.0 changes:
