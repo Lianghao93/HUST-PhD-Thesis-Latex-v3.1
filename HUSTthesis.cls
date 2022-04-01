@@ -1,5 +1,5 @@
 %%
-%% HUSTThesis.cls 2022/03/26 version V3.1
+%% HUSTThesis.cls 2022/03/28 version V3.2
 %%
 %% This is the unofficial LaTeX class for Master Thesis Template of
 %% Huazhong University of Science and Technology
@@ -21,6 +21,7 @@
 %% Current maintainer: lianghao93@vip.qq.com
 %%                     linjqcn@gmail.com
 %%
+%%           QQ Group：782574845
 %%**********************************************************************
 %
 % Available class options
@@ -170,7 +171,7 @@
 
 % 首行缩进宏包
 \RequirePackage{indentfirst}
-
+\setlength{\parindent}{2em}
 % 中文支持和中文数字支持
 % \RequirePackage{xeCJK,CJKnumb}
 \RequirePackage[SlantFont]{xeCJK}
@@ -282,7 +283,7 @@
 % 设置公式的编号形式，形式为 (式1.1)，\tagform@ 参考 amsmath 中的命令
 \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
 \let\reftagform@\tagform@
-\def\tagform@#1{\maketag@@@{(式\hspace{0.2em}\ignorespaces#1\unskip\@@italiccorr)}}
+\def\tagform@#1{\maketag@@@{(\hspace{0.2em}\ignorespaces#1\unskip\@@italiccorr)}}
 \renewcommand{\eqref}[1]{\textup{\reftagform@{\ref{#1}}}}
 
 % 设置子公式的编号形式，形式为(式1.1a)/(式1.1b)
@@ -368,7 +369,7 @@
 
 % 下面两条命令可以使标题编号随着每开始新的一章而重新开始，即按章的顺序编号
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
-\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 %\renewcommand{\thesubfigure}{\thefigure--(\arabic{subfigure})}
 % 定制引用子图的标记形式
 %\renewcommand{\p@subfigure}{:}
@@ -704,7 +705,7 @@
 \newcommand{\enabledottedtoc}{%仅显示标题，不显示指引线和页码
   \titlecontents{chapter}
               [0.0em]
-              {\vspace{0.45em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.3em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
               {\thecontentslabel\hspace{1em}}
               {}
               {\normalfont\dotfill\textrm{\contentspage[(\thecontentspage)]}}
@@ -712,7 +713,7 @@
 \newcommand{\disabledottedtoc}{%显示标题、指引线和页码
   \titlecontents{chapter}
               [2.1em]
-              {\vspace{0.45em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.3em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
               {\contentslabel{1.76em}}
               {}
               {}
@@ -721,7 +722,7 @@
 % 定义其它各级子标题的目录项格式
 \titlecontents{section}
               [3.24em]
-              {\vspace{0.45em}\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.3em}\sihao\addvspace{6bp minus6bp}}
               {\contentslabel{2.76em}}
               {}
               {\dotfill\textrm{\contentspage[(\thecontentspage)]}
@@ -755,7 +756,7 @@
     \def\@oddhead{%
       \vbox{%
         \parbox[b]{\textwidth}{\centering\sihao%
-          \ziju{0.8em} \bfseries \kai \sanhao[1] \HUST@schoolename\HUST@apply}
+          \ziju{0.8em} \kai \sanhao[1] \HUST@schoolename\HUST@apply}
         \vskip8pt
         \hspace{-4mm} \vbox{\hspace{-3mm} \hrule width 1.04\textwidth height\headrulewidth depth0pt\vskip1.0pt\hrule width 1.04\textwidth}}}\fi%
     \let\@evenhead=\@oddhead
@@ -855,13 +856,13 @@
 \newcommand{\HUST@ctitlepage}{
     \begin{center}
     \vspace*{-3.3cm}
-    \parbox[t][2.2cm][t]{\textwidth}{\sihao \bf
+    \parbox[t][2.2cm][t]{\textwidth}{\xiaosi \bfseries
     \begin{center}\song
     \setlength{\tabcolsep}{0pt}
     \setlength{\extrarowheight}{3pt}
-    \begin{HUST@tabular}{p{4em}p{5em}p{\textwidth-20em}p{2em}p{12em}}
-    \HUST@classno & \makebox[0pt][l]{\rule[-2.0pt]{5em}{1pt}} & \hfill &  \HUST@studentno & \makebox[0pt][l]{\rule[-2.0pt]{9em}{1pt}}{\hspace{2em}\HUST@xuehao} \tabularnewline
-    \HUST@UDC & \makebox[0pt][l]{\rule[-2.0pt]{5em}{1pt}}{\hfill\HUST@schoolcode\hfill\hfill} & \hfill & \HUST@secrettitle & \makebox[0pt][l]{\rule[-2.0pt]{9em}{1pt}}{\hspace{2em}\HUST@miji} \tabularnewline
+    \begin{HUST@tabular}{p{4em}p{5em}p{\textwidth-18em}p{2em}p{12em}}
+    \HUST@classno & \makebox[0pt][l]{\rule[-2.0pt]{5em}{1pt}} & \hfill &  \HUST@studentno & \makebox[0pt][l]{\rule[-2.0pt]{7em}{1pt}}{\hspace{1em}\HUST@xuehao} \tabularnewline 
+    \HUST@UDC & \makebox[0pt][l]{\rule[-2.0pt]{5em}{1pt}}{\hfill\HUST@schoolcode\hfill\hfill} & \hfill   &   \HUST@secrettitle & \makebox[0pt][l]{\rule[-2.0pt]{7em}{1pt}}{\hspace{1em}\HUST@miji} \tabularnewline
     \end{HUST@tabular}
     \end{center}
     }
@@ -872,7 +873,7 @@
     \includegraphics[scale=1.14]{figures/hust-flash-eps-crop.png}\\[1.3cm]
     \vspace{-0.8cm}
     \ziju{5bp}\dachu[1]{\bfseries \zhongsong \HUST@apply} \\%\CJKfamily{fzcs}
-    \vspace{-0.8cm}
+    \vspace{-0.4cm}
     \ziju{1bp}\bf{\xiaosan[1]{( 学术型$\square$ $\quad \quad$ 专业型$\square$ )}}
     \end{center}}
     \parbox[t][4cm][t]{\paperwidth-7cm}{
@@ -880,13 +881,13 @@
     \begin{center}
     \yihao[1.3] {\bf \song \HUST@ctitle}%\CJKfamily{fzcs}
     \end{center}}
-    \parbox[t][7.4cm][t]{\textwidth}{\vspace{5cm}\xiaoer[1.5] \bf
+    \parbox[t][7.4cm][t]{\textwidth}{\vspace{5cm}\xiaosan[1.5] \bf
     \begin{center}\song
     \setlength{\extrarowheight}{2.5pt}
     \begin{HUST@tabular}{p{5em}ll}
-    \HUST@cauthor & \HUST@title@sep & {\HUST@cauthorname}\\
-    \HUST@csubject & \HUST@title@sep & {\HUST@csubjectname}\\
-    \HUST@csupervisor & \HUST@title@sep & {\HUST@csupervisorname\hspace{1em}\HUST@csupervisortitle}\\
+    \HUST@cauthor & \HUST@title@sep & {\HUST@cauthorname} \vspace{0.4em}\\
+    \HUST@csubject & \HUST@title@sep & {\HUST@csubjectname} \vspace{0.4em}\\
+    \HUST@csupervisor & \HUST@title@sep & {\HUST@csupervisorname\hspace{1em}\HUST@csupervisortitle} \vspace{0.4em}\\
     \HUST@cdefencedate & \HUST@title@sep & {\ziju{3bp}\HUST@defencedate}
     \end{HUST@tabular}
     \end{center}}
@@ -931,7 +932,7 @@
 % 英文封面
 \newcommand{\HUST@etitlepage}{%
     \begin{center}
-    \vspace*{-2cm}
+    \vspace*{-1.2cm}
     \parbox[t][5.2cm][t]{\textwidth}{
       \renewcommand{\baselinestretch}{1.5}
       \begin{center}
@@ -940,7 +941,7 @@
       \end{center}}
 
     \parbox[t][5.5cm][t]{\textwidth}{
-    \vspace{2cm}
+    \vspace{1.8cm}
       \renewcommand{\baselinestretch}{1.3}
       \begin{center}
         \erhao \textbf{\HUST@etitle}
@@ -951,8 +952,8 @@
     \vspace{1cm}
       \xiaosan[1.2]\bfseries\centering%
       \begin{HUST@tabular}{lrp{20em}}
-        Ph.D. Candidate & : & \HUST@eauthor\\ \\
-        Major & : & \HUST@esubject\\ \\
+        Ph.D. Candidate & : & \HUST@eauthor\\  \vspace{-0.3pt}\\
+        Major & : & \HUST@esubject\\ \vspace{-0.3pt}\\
         Supervisor & : & \HUST@esupervisor
       \end{HUST@tabular}
       }
@@ -960,7 +961,7 @@
 
     \parbox[t][6cm][b]{\paperwidth-7.2cm}{
     \begin{center}
-    \sihao[2.0] {\bf{Huazhong University of Science \& Technology\\
+    \sihao[2.0] {\bf{Huazhong University of Science and Technology\\
     Wuhan~430074, P.~R.~China\\
     \HUST@edate}}
     \end{center}}
@@ -1038,8 +1039,8 @@
     \markboth{\abstractshortname}{\abstractshortname}
     \HUST@cabstract
     \\[1em]
-    \noindent\begin{HUST@tabular}{@{}p{4em}@{}p{\textwidth-4em}}
-    {\hei\HUST@keywords} & \HUST@ckeywords \\
+    \noindent\begin{HUST@tabular}{@{}p{4em}@{}p{\textwidth-4em}} \\
+    {\hei\HUST@keywords} & \HUST@ckeywords \\ 
     \end{HUST@tabular}
 
     % 定义英文摘要
@@ -1052,7 +1053,7 @@
     \HUST@eabstract
     \\[1em]
     \noindent\begin{HUST@tabular}{@{}p{5em}@{}p{\textwidth-5em}}
-    {\textbf{Key words:}} & \HUST@ekeywords\\
+    {\textbf{Key words:}} & \hspace{0.4em} \HUST@ekeywords\\
     \end{HUST@tabular}
     \disabledottedtoc%
     }
@@ -1329,7 +1330,7 @@
 做出贡献的个人和集体，均已在文中以明确方式标明。本人完全意识到本声明的法律结果由本人承担。}
 \newcommand{\HUST@signature}{签\hspace{1em}名：}
 \newcommand{\HUST@backdate}{日\hspace{1em}期：}
-\newcommand{\HUST@publication@title}{攻读学位期间发表论文目录}
+\newcommand{\HUST@publication@title}{攻读博士学位期间取得的研究成果}
 \newcommand{\HUST@patent@title}{攻读博士学位期间申请的发明专利和其他成果}
 \newcommand{\HUST@project@title}{攻读博士学位期间参与的科研项目}
 
