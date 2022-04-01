@@ -1,7 +1,38 @@
+# 华中科技大学学位论文Latex模板说明
+
+    该模板为华中科技大学硕士/博士学位论文Latex模板
+    根据华中科技大学研究生院发布的最新学位论文模板，在原版本的基础上进行了更新
+    当前版本由人工智能与自动化学院生物计算团队更新管理
+    可能存在诸多错误与问题，请提出宝贵意见
+    欢迎大家进群分享使用经验（QQ群：782574845）。
+    
+**********************************************************************
+安装配置环境
+
+    Windows、MacOS推荐安装TeXstudio，并更新宏包。
+    不喜欢折腾的，可以注册使用Overleaf在线编辑。
+
+使用说明
+
+    \body     	论文内容撰写存档
+    \figures    	论文图片统一存档
+    \ref      	 	参考文献整合存档 
+    main.tex   	论文整体章节编辑
+
+更新作者
+
+    Lianghao Li (李良昊)，Jianqing Lin (林剑清) 
+            ——人工智能与自动化学院生物计算团队
+
+QQ交流群
+
+    华中大学位论文Latex群（群号：782574845）
+
+**********************************************************************
+
 # HUST-PhD-Thesis-Latex
 
-
-HUSTThesis.cls 2021/09/16 version V3.1
+HUSTThesis.cls 2022/03/30 version V3.1
 
 This is the unofficial LaTeX class for Master/Ph.D. Thesis Template of Huazhong University of Science and Technology
 
