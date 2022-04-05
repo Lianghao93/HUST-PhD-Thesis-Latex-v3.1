@@ -283,7 +283,7 @@
 % 设置公式的编号形式，形式为 (式1.1)，\tagform@ 参考 amsmath 中的命令
 \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
 \let\reftagform@\tagform@
-\def\tagform@#1{\maketag@@@{(\hspace{0.2em}\ignorespaces#1\unskip\@@italiccorr)}}
+\def\tagform@#1{\maketag@@@{(\hspace{0.1em}\ignorespaces#1\unskip\@@italiccorr)}}
 \renewcommand{\eqref}[1]{\textup{\reftagform@{\ref{#1}}}}
 
 % 设置子公式的编号形式，形式为(式1.1a)/(式1.1b)

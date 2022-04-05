@@ -2,6 +2,7 @@
 like to use]
 \usepackage{multirow,booktabs,soul}
 \usepackage{makecell}
+\usepackage{array}
 \usepackage{amsmath}
 \usepackage{amssymb,color}
 \usepackage{algorithmic}
@@ -15,6 +16,9 @@ like to use]
 \usepackage{url}
 \definecolor{hl}{rgb}{0.75,0.75,0.75}
 \sethlcolor{hl}
+\usepackage{natbib}
+\newcommand{\lcite}[1]{{\setcitestyle{numbers,square}\cite{#1}}}
+
 
 % 不同于~|\mathcal| or |\mathfrak| 之类的英文花体字体
 %\RequirePackage{mathrsfs}
