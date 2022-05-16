@@ -194,7 +194,8 @@ FUNCTION {output.bibitem}
 }
 
 FUNCTION {fin.entry}
-{ add.period$
+{ 
+  %add.period$
   write$
   newline$
 }
@@ -559,7 +560,7 @@ FUNCTION {format.vol.num.pages}
     'skip$
     { duplicate$ empty$
     { pop$ format.pages }
-    { ":" * pages n.dashify * }
+    { ": " * pages n.dashify * }
       if$
     }
   if$
@@ -580,7 +581,7 @@ FUNCTION {format.year.chapter.pages}
     'skip$
     { duplicate$ empty$
     { pop$ format.pages }
-    { ":" * pages n.dashify * }
+    { ": " * pages n.dashify * }
       if$
     }
   if$

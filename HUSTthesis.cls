@@ -344,6 +344,7 @@
   % 图表标题字体比正文小半号，为大五号，11pt
   \dawu
   \rmfamily
+  \kai
   \vskip\abovecaptionskip
   % 去掉图表号后面的":"
   \setbox\@tempboxa\hbox{#1~~#2}%
@@ -702,7 +703,7 @@
 %适当增加目录项的右边距
 \contentsmargin{2.0em}
 % 分别正文一级标题的两种目录项格式
-\newcommand{\enabledottedtoc}{%仅显示标题，不显示指引线和页码
+\newcommand{\enabledottedtoc}{%显示标题、指引线和页码
   \titlecontents{chapter}
               [0.0em]
               {\vspace{0.3em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
@@ -710,7 +711,7 @@
               {}
               {\normalfont\dotfill\textrm{\contentspage[(\thecontentspage)]}}
               }
-\newcommand{\disabledottedtoc}{%显示标题、指引线和页码
+\newcommand{\disabledottedtoc}{%仅显示标题，不显示指引线和页码
   \titlecontents{chapter}
               [2.1em]
               {\vspace{0.3em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
@@ -874,8 +875,8 @@
     \vspace{-0.8cm}
     \ziju{5bp}\dachu[1]{\bfseries \zhongsong \HUST@apply} \\%\CJKfamily{fzcs}
     \vspace{-0.4cm}
-    \ziju{1bp}\bf{\xiaosan[1]{( 学术型$\square$ $\quad \quad$ 专业型$\square$ )}}
-    \end{center}}
+    \ziju{1bp}\bf{\xiaosan[1]{( 学术型$\mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}}$ $\quad \quad$ 专业型$\square$ )}}
+    \end{center}}\\
     \parbox[t][4cm][t]{\paperwidth-7cm}{
     \vspace{3.0cm}
     \begin{center}
@@ -1053,7 +1054,7 @@
     \HUST@eabstract
     \\[1em]
     \noindent\begin{HUST@tabular}{@{}p{5em}@{}p{\textwidth-5em}}
-    {\textbf{Key words:}} & \hspace{0.4em} \HUST@ekeywords\\
+    {\textbf{Keywords:}} & \hspace{0.4em} \HUST@ekeywords\\
     \end{HUST@tabular}
     \disabledottedtoc%
     }
@@ -1063,7 +1064,13 @@
 \newenvironment{denotation}{
     %\cleardoublepage
     %\phantomsection
-    %\addcontentsline{toc}{chapter}{\sihao \HUST@denotation@name}
+    \titlecontents{chapter}
+           [0.0em]
+           {\bfseries\hei\addvspace{6bp minus6bp}}
+           {\thecontentslabel\hspace{1em}}
+           {}
+           {\normalfont\dotfill\textrm{\bfseries\contentspage}}
+    \addcontentsline{toc}{chapter}{\sihao \HUST@denotation@name}
     \chapter*{\HUST@denotation@name}
     \markboth{\HUST@denotation@name}{\HUST@denotation@name}
     \xiaosi[1.6]
@@ -1078,8 +1085,10 @@
                 \setlength{\itemsep}{0cm} %标签间距
                 \setlength{\listparindent}{0cm} %段落缩进量
                 \setlength{\topsep}{0pt} %标签与上文的间距
-    }}
+    }
+    \disabledottedtoc}
     {\end{list}}%%%%%
+
 
 % 定义封底的“致谢”
 %改动7
