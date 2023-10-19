@@ -5,7 +5,11 @@ HUSTThesis.cls 2021/09/16 version V3.1
 
 This is the unofficial LaTeX class for Master/Ph.D. Thesis Template of Huazhong University of Science and Technology
 
+QQ group: 782574845
 
+![1708eae5537becea700f421a18f54bee](https://github.com/Lianghao93/HUST-PhD-Thesis-Latex-v3.1/assets/32161863/f55f78ed-76db-4eda-90e0-d8a5901a256c)
+
+ 
 Contributors: Lianghao Li, Jianqing Lin (2021 V3.1), Xinze Zhang (2020 V3.0), Huikan Liu (2006 V2.0), and Feng Jiang (2005 V1.0). 
 
 Copyright (C) 2020-2021 by Xinze Zhang <xinze@hust.edu.cn>
