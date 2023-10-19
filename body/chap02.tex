@@ -40,25 +40,44 @@
 
 （3）插入题注自动编号。题目推荐使用二个空格，不建议使用TAB空格（图目录不方便调节缩进）。
 
-（4）交叉引用。在需要引用公式的地方用“插入”->“交叉引用”，选择引用类型和引用内容“只有标签和编号”交叉引用公式编号。如图\ref{Fig2-1}所示。
+（4）交叉引用。在需要引用公式的地方用“插入”->“交叉引用”，选择引用类型和引用内容“只有标签和编号”交叉引用公式编号。如图\ref{Fig2_1}所示。
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics{Fig2-1}
     \caption{测试图标题}
-    \label{Fig2-1}
+    \label{Fig2_1}
 \end{figure}
 %\vspace{-2em}
 可以从图中观察到，xxx。
 
+\begin{figure}
+	\subfloat[EDN-ARMOEA]{
+        \begin{minipage}[t]{0.5\linewidth}
+        \includegraphics[width=1\linewidth]{figures/Fig2-1.png}
+        \label{fig1111}
+        \end{minipage}%
+        }
+	\subfloat[EDN-ARMOEA]{
+        \begin{minipage}[t]{0.5\linewidth}
+        \includegraphics[width=1\linewidth]{figures/Fig2-1.png}
+        \label{fig222}
+        \end{minipage}
+    }
+    \label{fig333}
+    \caption{asas}
+\end{figure}
+
+如图\ref{fig222}所示。
+
 \section{公式的自动编号与引用}
-举例：这里我们考虑一个由N个跟随者和一个编号为0的领导者构成的多自主体网络。其中，跟随者的动力学由如下动力学描述
+举例：这里我们考虑一个由$N$个跟随者和一个编号为0的领导者$L_w = 150 m$构成的多自主体网络。其中，跟随者的动力学由如下动力学描述
 \begin{equation}
 \sum_{i=1}^{\left[ \frac{n}{2}\right]} \binom{x_{i,i+1}^{i^2}}
 {\left[\frac{i+3}{3} \right]} \frac{\sqrt{\mu(i)^{\frac{3}{2}}
 (i^2-1)}} {\sqrt[3]{\rho(i)-2}+\sqrt[3]{\rho(i)-1}}
 \end{equation}
-其中第i个自主体的状态$x_i (t)\in R$，f$(x_i (t))$代表非线性连续可微函数，$U_i$表示节点i的控制输入。
+其中第$i$个自主体的状态$x_i (t)\in R$，f$(x_i (t))$代表非线性连续可微函数，$U_i$表示节点i的控制输入。
 
 
 \section{三线表}
@@ -77,9 +96,19 @@
     3-1  & 3-2  & 3-3 & 3-4 & 3-5 \\
     4-1  & 4-2  & 4-3 & 4-4 & 4-5 \\
     \bottomrule
-    \end{tabular}%
-  \label{Tab2-1}%
-\end{table}%
+    \end{tabular}
+  \label{Tab2-1}
+\end{table}
+
+\begin{longtable}{ccccc}
+\caption{Title of long table}\\
+    \hline
+    1-1  & 1-2  & 1-3 & 1-4 & 1-5 \\
+    2-1  & 2-2  & 2-3 & 2-4 & 2-5 \\
+    3-1  & 3-2  & 3-3 & 3-4 & 3-5 \\
+    4-1  & 4-2  & 4-3 & 4-4 & 4-5 \\
+    \bottomrule
+\end{longtable}
 
 \begin{table}[htbp]
   \centering
@@ -93,9 +122,9 @@
     3-1  & 3-2  & 3-3 & 3-4 & 3-5 \\
     4-1  & 4-2  & 4-3 & 4-4 & 4-5 \\
     \bottomrule
-    \end{tabular}%
-  \label{Tab2-2}%
-\end{table}%
+    \end{tabular}
+  \label{Tab2-2}
+\end{table}
 
 
 \section{目录}
@@ -120,7 +149,7 @@
 
 （2）表格及插图中，使用单位符号，不使用单位名称和单位中文符号。叙述性文字中，优先使用单位符号。必要时，可使用单位名称，但不可使用单位中文符号。如：流量为11400 m3/s，不可写作流量11400米３／秒。
 
-（3）两个物理量（量值加单位）在表示范围时，两个量值用波浪线“～”连接后使用一个计量单位，如：应写作800～1500 m3/s，而不写作800m3/s～1500 m3/s。
+（3）两个物理量（量值加单位）在表示范围时，两个量值用波浪线“～”连接后使用一个计量单位，如：应写作800～1500 m3/s，而不写作800m3/s～1500 m$^3$/s。
 
 
 
@@ -128,7 +157,7 @@
 数字的使用应符合国家标准GB/T15838—2011《出版物上数字用法》，同时应符合相关行业标准。
 以下情况应使用阿拉伯数字：
 
-（1）统计表中的数值，如：正负整数、小数、百分数、分数、比例。
+（1）统计表中的数值，如：正负整数、小数、百分数、分数、比例。 
 
 （2）物理量量值，如：150 m$^3$/s，200 kg，注意数量与单位之间应有空格。
 
@@ -184,7 +213,7 @@
 
 \item	T. Yao, J. Wan, P. Huang, X. He, F. Wu, C. Xie. Building efficient key-value stores via a lightweight compaction tree. ACM Transactions on Storage, 2017, 13(4): 1-28
 
-\item	刘加林. 多功能一次性压舌板: 中国, ZL92214985. 2 [P]. 1993
+\item	刘加林. 多功能一次性压舌板: 中国, ZL92214985, 2 [P], 1993
 
 \item	李清泉. 基于混合数据结构的三维GIS数据模型与空间分析研究[博士学位论文]. 武汉: 武汉测绘科技大学, 1998
 
@@ -237,6 +266,7 @@ xxxxxx\cite{jxd1996, CCPT}
 
 ~\\
 也可以在正文中\lcite{CCPT}引用
+
 
 
 

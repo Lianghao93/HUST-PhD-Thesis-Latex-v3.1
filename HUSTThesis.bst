@@ -283,7 +283,7 @@ FUNCTION {format.lang}
 FUNCTION {format.names}
 { 's :=
   #1 'nameptr :=
-  s num.names$ 'numnames :=
+  s num.names$ 'numnames := 
   numnames 'namesleft :=
     { namesleft #0 > }
     { s nameptr
@@ -560,7 +560,7 @@ FUNCTION {format.vol.num.pages}
     'skip$
     { duplicate$ empty$
     { pop$ format.pages }
-    { ": " * pages n.dashify * }
+    { ":" * pages n.dashify * }
       if$
     }
   if$
@@ -581,7 +581,7 @@ FUNCTION {format.year.chapter.pages}
     'skip$
     { duplicate$ empty$
     { pop$ format.pages }
-    { ": " * pages n.dashify * }
+    { ":" * pages n.dashify * }
       if$
     }
   if$
@@ -609,12 +609,12 @@ FUNCTION {format.in.ed.booktitle}
     { editor empty$
     { lang empty$
         { "in: " booktitle * }
-        { "��: " booktitle * }
+        { "见：" booktitle * }
       if$
     }
     { lang empty$
         { "in: " format.editors * ", " * booktitle * }
-        { ". ��: " * format.editors * booktitle * }
+        { "见：" * format.editors * booktitle * }
       if$
     }
       if$
@@ -769,6 +769,20 @@ FUNCTION {format.address.school}
 }
 
 
+FUNCTION {format.year.pages}
+
+{ year field.or.null
+  pages empty$
+    'skip$
+    { duplicate$ empty$
+    { pop$ format.pages }
+    { ". " * pages n.dashify * }
+      if$
+    }
+  if$
+}
+
+
 FUNCTION {format.title.type}
 { title empty$
     { type empty$
@@ -869,6 +883,7 @@ FUNCTION {inproceedings}
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
+      new.block
       %format.bvolume output
       %format.number.series output
       %format.pages output
@@ -876,12 +891,13 @@ FUNCTION {inproceedings}
     { organization publisher new.sentence.checkb
       organization output
       publisher output
+      %new.block
       format.year.chapter.pages output
       %year output
     }
     { %address output.nonnull
       format.address.publisher output  
-      format.year.chapter.pages output
+      format.year.pages output
       %year output
       %new.sentence
       %organization output

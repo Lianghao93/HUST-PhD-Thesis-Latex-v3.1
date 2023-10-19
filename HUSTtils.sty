@@ -17,7 +17,13 @@ like to use]
 \definecolor{hl}{rgb}{0.75,0.75,0.75}
 \sethlcolor{hl}
 \usepackage{natbib}
+\usepackage{caption}
 \newcommand{\lcite}[1]{{\setcitestyle{numbers,square}\cite{#1}}}
+
+\usepackage{subfloat}
+\captionsetup[subfloat]{labelformat=simple}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+
 
 
 % 不同于~|\mathcal| or |\mathfrak| 之类的英文花体字体

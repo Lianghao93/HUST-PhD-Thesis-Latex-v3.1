@@ -19,7 +19,7 @@
 %% Retain the contribution notices and credits.
 %%
 %% Current maintainer: lianghao93@vip.qq.com
-%%                     linjqcn@gmail.com
+%%                     linjqcn@gmail.com\section{参考文献}
 %%
 %%           QQ Group：782574845
 %%**********************************************************************
@@ -344,7 +344,8 @@
   % 图表标题字体比正文小半号，为大五号，11pt
   \dawu
   \rmfamily
-  \kai
+  \song
+  %\setstretch{.9} %在图表标题长度超过一行时，调整行间距使之与正文行间距一致
   \vskip\abovecaptionskip
   % 去掉图表号后面的":"
   \setbox\@tempboxa\hbox{#1~~#2}%
@@ -364,6 +365,7 @@
 \def\thetable{\@arabic\c@table}
 \def\fnum@table{\tablename~\thetable}
 
+
 % 设置标题前后间距
 \setlength\abovecaptionskip{12bp}
 \setlength\belowcaptionskip{12bp}
@@ -374,6 +376,7 @@
 %\renewcommand{\thesubfigure}{\thefigure--(\arabic{subfigure})}
 % 定制引用子图的标记形式
 %\renewcommand{\p@subfigure}{:}
+
 
 % 定义新命令\hlinewd 来改变水平线的粗细
 \def\hlinewd#1{%
@@ -573,7 +576,7 @@
 \thu@define@fontsize{dachu}{53pt}
 \thu@define@fontsize{chuhao}{42pt}
 \thu@define@fontsize{xiaochu}{36pt}
-\thu@define@fontsize{yihao}{28pt}
+\thu@define@fontsize{yihao}{26pt}
 \thu@define@fontsize{xiaoyi}{24pt}
 \thu@define@fontsize{erhao}{22pt}
 \thu@define@fontsize{xiaoer}{18pt}
@@ -591,7 +594,7 @@
 \thu@define@fontsize{bahao}{5pt}
 %% 正文小四号（12pt）字，行距为固定值18 pt，18/12=1.5倍行距
 %\renewcommand\normalsize{\fontsize{12pt}{18pt}\selectfont}
-\renewcommand\normalsize{\fontsize{12pt}{22pt}\selectfont}
+\renewcommand\normalsize{\fontsize{12pt}{22.5pt}\selectfont}
 %改动2
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -637,12 +640,12 @@
 \setcounter{secnumdepth}{3}
 
 % 章序号与章名之间空一个汉字符，黑体三号字，居中书写，单倍行距，
-% 段前空24磅，段后空20磅。
+% 段前空20磅，段后空20磅。
 \renewcommand \thechapter {\@arabic\c@chapter}
 \def\@makechapterhead#1{%
-  \vspace*{24bp}%
+  \vspace*{20bp}%
   \begingroup
-  \hei\sanhao[1]\centering
+  \hei \bfseries \sanhao[1]\centering
     \ifnum \c@secnumdepth >\m@ne
       \thechapter\hskip1em
     \fi
@@ -655,7 +658,7 @@
 \def\@makeschapterhead#1{%
   \vspace*{24bp}%
   \begingroup
-  \hei\sanhao[1]\centering
+  \hei \bfseries \sanhao[1]\centering
   \interlinepenalty\@M
   #1\par\endgroup
   \nobreak
@@ -671,7 +674,7 @@
 \renewcommand\section{\@startsection {section}{1}{\z@}%
                                    {24bp}%
                                    {6bp}%
-                                   {\hei\sihao[1.5]}}
+                                   {\hei \bfseries \sihao[1.5]}}
 
 % 二级节标题，例如：“2.1.1  理论分析”。
 % 节标题序号与标题名之间空一个汉字符。
@@ -680,7 +683,7 @@
 \renewcommand\subsection{\@startsection {subsection}{2}{\z@}%
                                    {16bp}%
                                    {6bp}%
-                                   {\hei\banxiaosi[1.5]}}
+                                   {\hei\bfseries \xiaosi[1.5]}}
 
 % 三级节标题，例如：“2.1.1.1  理论分析”。
 % 节标题序号与标题名之间空一个汉字符。
@@ -689,7 +692,7 @@
 \renewcommand\subsubsection{\@startsection {subsubsection}{3}{\z@}%
                                    {16bp}%
                                    {6bp}%
-                                   {\hei\xiaosi[1.5]}}
+                                   {\hei\bfseries \xiaosi[1.5]}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -706,7 +709,7 @@
 \newcommand{\enabledottedtoc}{%显示标题、指引线和页码
   \titlecontents{chapter}
               [0.0em]
-              {\vspace{0.3em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.3em}\bfseries\hei\sihao\addvspace{6bp}}
               {\thecontentslabel\hspace{1em}}
               {}
               {\normalfont\dotfill\textrm{\contentspage[(\thecontentspage)]}}
@@ -714,7 +717,7 @@
 \newcommand{\disabledottedtoc}{%仅显示标题，不显示指引线和页码
   \titlecontents{chapter}
               [2.1em]
-              {\vspace{0.3em}\bfseries\hei\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.3em}\bfseries\hei\sihao\addvspace{6bp}}
               {\contentslabel{1.76em}}
               {}
               {}
@@ -723,7 +726,7 @@
 % 定义其它各级子标题的目录项格式
 \titlecontents{section}
               [3.24em]
-              {\vspace{0.3em}\sihao\addvspace{6bp minus6bp}}
+              {\vspace{0.3em}\sihao\addvspace{6bp}}
               {\contentslabel{2.76em}}
               {}
               {\dotfill\textrm{\contentspage[(\thecontentspage)]}
@@ -748,8 +751,8 @@
 % 定义页眉页脚，参考 fancyhdr 宏包的代码
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %改动4
-\newcommand{\headrulewidth}{0.4pt}
-\newcommand{\footrulewidth}{0.4pt}
+\newcommand{\headrulewidth}{1pt}
+\newcommand{\footrulewidth}{0.5pt}
 \def\ps@plain{%
   \ifHUST@finalformat
     \def\@oddhead{}
@@ -757,9 +760,9 @@
     \def\@oddhead{%
       \vbox{%
         \parbox[b]{\textwidth}{\centering\sihao%
-          \ziju{0.8em} \kai \sanhao[1] \HUST@schoolename\HUST@apply}
-        \vskip8pt
-        \hspace{-4mm} \vbox{\hspace{-3mm} \hrule width 1.04\textwidth height\headrulewidth depth0pt\vskip1.0pt\hrule width 1.04\textwidth}}}\fi%
+          \ziju{0.81em} \kai \bfseries \sanhao[1] \textcolor[RGB]{212,14,14}{\HUST@schoolename\HUST@apply}}
+        \vskip6pt
+        \hspace{-4mm} \vbox{\hspace{-3mm} \textcolor[RGB]{212,14,14}{\hrule width 1.04\textwidth height\headrulewidth depth0pt\vskip1pt \hrule width 1.04\textwidth height\headrulewidth}}}}\fi%
     \let\@evenhead=\@oddhead
   \ifHUST@finalformat
    \def\@oddfoot{%
@@ -769,12 +772,12 @@
       }}}
    \else
    \def\footrule{{\vskip-0.3\normalbaselineskip\vskip-\footrulewidth
-   \hrule\@width 1.04\textwidth\@height\footrulewidth\vskip0.3\normalbaselineskip}}
+   \hrule\@width 1.04\textwidth\@height\footrulewidth\vskip0.45\normalbaselineskip}}
    \def\@oddfoot{%
      \hbox to \textwidth{%
      \hspace{-4mm}\vbox{%
       \footrule
-      \hfill \hspace{-4mm} \parbox[t]{\textwidth}{\centering\wuhao\thepage\strut}\hfill
+      \hfill \hspace{-4mm} \parbox[t]{\textwidth}{\hspace{10mm}\centering\wuhao\thepage\strut} \vspace{3mm}\hfill
       }}}
    \fi
   \let\@evenfoot=\@oddfoot}
@@ -903,6 +906,7 @@
     \end{center}}}
     \fi
     \end{center}}
+    
 % 答辩委员会
 \newcommand{\HUST@defencecommittee}{
 \begin{center}\song\sanhao
@@ -913,7 +917,7 @@
     \hline
     &\makecell{\textbf{姓名}}&\makecell[c]{\textbf{职称}}&\makecell[c]{\textbf{单位}}\\
     \hline
-    主席&&&\\
+    主席& &&\\
     \hline
     \multirow{6}{*}{委员}&&&\\
     \cline{2-4}
@@ -984,7 +988,7 @@
         \HUST@authorsig & \hspace{-2em} \vspace{0.5cm}\\
         \HUST@frontdate & \hspace{-2em} \\
     \end{HUST@tabular}}\\
-    \vspace{3cm}    
+    \vspace{2cm}    
     \begin{center}
     \parbox[t][3cm][c]{\textwidth}{\sanhao \hei \centerline{ \HUST@authtitle}}
     \parbox[t][3cm][c]{\textwidth}{\xiaosi[2]\HUST@authorization}\\
@@ -1035,7 +1039,7 @@
            {\thecontentslabel\hspace{1em}}
            {}
            {\normalfont\dotfill\textrm{\bfseries\contentspage}}
-    \addcontentsline{toc}{chapter}{\sihao 摘~~~~要}
+    \addcontentsline{toc}{chapter}{\sihao 摘~~~要}
     \chapter*{\bfseries\hei\abstractname}
     \markboth{\abstractshortname}{\abstractshortname}
     \HUST@cabstract
@@ -1088,6 +1092,24 @@
     }
     \disabledottedtoc}
     {\end{list}}%%%%%
+
+\newenvironment{figlist}{
+    %\cleardoublepage
+    %\phantomsection
+    \titlecontents{chapter}
+           [0.0em]
+           {\bfseries\hei\addvspace{6bp minus6bp}}
+           {\thecontentslabel\hspace{1em}}
+           {}
+           {\normalfont\dotfill\textrm{\bfseries\contentspage}}
+    \addcontentsline{toc}{chapter}{\sihao \HUST@figlist@name}
+    \listoffigures%\chapter*{\HUST@figlist@name}
+    \markboth{\HUST@figlist@name}{\HUST@figlist@name}
+    \xiaosi[1.6]
+    \disabledottedtoc}
+    {\end{list}}%%%%%
+
+
 
 
 % 定义封底的“致谢”
@@ -1270,7 +1292,7 @@
 \renewcommand\appendixname{附录}
 
 \newcommand{\abstractshortname}{摘\hspace{2em}要}
-\newcommand{\abstractname}{摘\hspace{2em}要}
+\newcommand{\abstractname}{摘\hspace{1em}要}
 
 \let\CJK@todaysave=\today
 \def\CJK@todaysmall{~\the\year~年~\the\month~月~\the\day~日}
@@ -1297,7 +1319,7 @@
   \or \ding{178}\or \ding{179}\or \ding{180}\or \ding{181}\else *\fi\relax}
 \def\HUST@title@sep{\hspace{-0.5em}：\hspace{2em}}
 \def\HUST@schoolename{华中科技大学}
-%\def\HUST@schoolename{}%盲审，删去页眉
+%\def\HUST@schoolename{} %盲审，删去页眉
 \def\HUST@classno{分\hfill 类\hfill 号}
 \def\HUST@studentno{学号}
 \def\HUST@UDC{学校代码}
@@ -1330,6 +1352,7 @@
 
 \newcommand{\HUST@keywords}{关键词：}
 \newcommand{\HUST@denotation@name}{主要符号对照表}
+\newcommand{\HUST@figlist@name}{插图}
 \newcommand{\HUST@ackshortname}{致谢}
 \newcommand{\HUST@ackname}{致\hspace{2em}谢}
 \newcommand{\HUST@acklongname}{致谢与声明}
